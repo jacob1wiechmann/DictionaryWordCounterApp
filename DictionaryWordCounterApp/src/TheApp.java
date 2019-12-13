@@ -22,11 +22,12 @@ public class TheApp extends Application {
 		
         // The data structure that will be used to store all words in the document
 		ArrayList<String> allWordsInDocument = new ArrayList<String>();
-		
+//Map<String, String> allWordsInDocuments = new HashMap<>();
 		
 		
 		// Load the dictionary words from the file
-		ArrayList<String> dictWords = new ArrayList<String>();
+		//ArrayList<String> dictWords = new ArrayList<String>();
+		HashSet<String> dictWords = new HashSet<>();
 		File dictFile = new File("dict.txt");
         try {
             Scanner input = new Scanner(dictFile); 
@@ -103,9 +104,9 @@ public class TheApp extends Application {
                         	//       (in other words, it should only count the word if the dictionary contains that word)
                             // NOTE: this should only require adding 1 or 2 lines of code
                             for (String word: allWordsInDocument) {
-                            	//if(dictWords.equals(word)) {
+                            	if(dictWords.contains(word)) {
                             	numWords++;
-                            	//}
+                            	}
                             }
                             
                             Platform.runLater(() -> outputMessage.setText("The document contains " + numWords + " dictionary words"));    

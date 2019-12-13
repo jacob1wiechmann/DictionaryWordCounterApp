@@ -22,7 +22,7 @@ public class TheApp extends Application {
 		
         // The data structure that will be used to store all words in the document
 		ArrayList<String> allWordsInDocument = new ArrayList<String>();
-//Map<String, String> allWordsInDocuments = new HashMap<>();
+
 		
 		
 		// Load the dictionary words from the file
